@@ -85,7 +85,19 @@ game.BirdEntity = me.Entity.extend({
         var obj = response.b;
         if (obj.type === 'pipe' || obj.type === 'ground') {
             me.device.vibrate(500);
-            //this.collided = true;
+            if(obj.type == 'pipe'){
+                if(!(obj.pos.y % 3 == 0)){
+                    this.collided = true;
+                } else {
+                    //change color of pipe
+                    //settings.image = this.image = me.loader.getImage('pipe');
+                    //obj.settings.image = me.loader.getImage('goldpipe');
+                    //obj.setOpacity(0.5);
+                }
+            } else {
+                this.collided = true;
+            }
+
         }
         // remove the hit box
         if (obj.type === 'hit') {
