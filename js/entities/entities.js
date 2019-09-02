@@ -85,7 +85,7 @@ game.BirdEntity = me.Entity.extend({
         var obj = response.b;
         if (obj.type === 'pipe' || obj.type === 'ground') {
             me.device.vibrate(500);
-            this.collided = true;
+            //this.collided = true;
         }
         // remove the hit box
         if (obj.type === 'hit') {
