@@ -158,7 +158,9 @@ game.PipeEntity = me.Entity.extend({
         this._super(me.Entity, 'update', [dt]);
         return true;
     },
-
+    onCollision: function(response) {
+        //this.settings.image = me.loader.getImage('goldpipe');
+    },
 });
 
 game.PipeGenerator = me.Renderable.extend({
